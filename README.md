@@ -1,7 +1,5 @@
 # Secure Mobile Authentication — OAuth 2.0 Authorization Code + PKCE
 
-> 🇹🇷 Türkçe sürüm: [README.tr.md](README.tr.md)
-
 University software-security term project. A secure demonstration of the
 **OAuth 2.0 Authorization Code Flow + PKCE (S256)** using an iOS (SwiftUI) client and a
 minimal Java (Spring Boot) backend. It also includes a scripted attack demo that proves
