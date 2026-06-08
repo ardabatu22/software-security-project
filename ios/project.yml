@@ -1,0 +1,48 @@
+name: OAuthDemo
+
+options:
+  bundleIdPrefix: com.example
+  deploymentTarget:
+    iOS: "16.0"
+
+targets:
+  OAuthDemo:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+
+    # Compile the 6 Swift files in the OAuthDemo/ folder (exactly one @main lives in
+    # OAuthDemoApp.swift — no duplicate app entry is created).
+    sources:
+      - OAuthDemo
+
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.OAuthDemo
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        TARGETED_DEVICE_FAMILY: "1,2"   # iPhone + iPad
+        SWIFT_VERSION: "5.0"
+        # We supply our own Info.plist below, so disable the auto-synthesized one
+        # (otherwise the two collide / duplicate keys).
+        GENERATE_INFOPLIST_FILE: "NO"
+
+    # Generate Info.plist from these properties (XcodeGen also fills in the standard
+    # CFBundle* defaults automatically).
+    info:
+      path: OAuthDemo/Info.plist
+      properties:
+        UILaunchScreen: {}              # default blank launch screen (SwiftUI, no storyboard)
+
+        # Register the custom URL scheme used as the OAuth redirect target.
+        CFBundleURLTypes:
+          - CFBundleURLName: com.example.oauthdemo
+            CFBundleURLSchemes:
+              - com.example.oauthdemo
+
+        # Allow plaintext HTTP only to localhost (Simulator -> Mac backend). Demo-only.
+        NSAppTransportSecurity:
+          NSExceptionDomains:
+            localhost:
+              NSExceptionAllowsInsecureHTTPLoads: true
+              NSIncludesSubdomains: true

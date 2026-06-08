@@ -1,0 +1,27 @@
+# ---- Build output ----
+backend/target/
+
+# ---- Generated Xcode project (regenerate with: cd ios && xcodegen generate) ----
+ios/OAuthDemo.xcodeproj/
+*.xcuserstate
+ios/DerivedData/
+
+# ---- macOS ----
+.DS_Store
+
+# ---- Do NOT commit: contains OTHER students' personal data (privacy) ----
+SEN_2008_Project_Registration__.xlsx
+
+# ---- Instructor's assignment brief (not our work) ----
+SEN 2008_ Term Project.pdf
+
+# ---- Stray screenshot ----
+Ekran Resmi*.png
+
+# ---- Internal prep / study notes (not part of the agreed deliverables) ----
+01_Backend_Anlatim.md
+02_iOS_Anlatim.md
+03_Sunum_ve_Demo_Rehberi.md
+
+# ---- Report markdown source (only the PDF is published) ----
+SEN2008_Project_Report.md
